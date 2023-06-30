@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class Homepage extends StatelessWidget {
@@ -5,6 +6,12 @@ class Homepage extends StatelessWidget {
   final String name = "Kiran";
 
   const Homepage({super.key});
+  
+  get itemBuilder => null;
+  
+  get itemCount => null;
+  
+  get separatorBuilder => null;
 
   @override
   Widget build(BuildContext context) {
@@ -17,5 +24,7 @@ class Homepage extends StatelessWidget {
       ), 
       drawer: const Drawer(),
     );
+   
+
   }
 }
