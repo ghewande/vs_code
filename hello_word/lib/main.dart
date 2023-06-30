@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello_word/pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hello_word/utils/Routes.dart';
 import 'pages/home.dart';
 import 'pages/home.dart';
 
@@ -9,6 +10,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   get dark => null;
 
   @override
@@ -21,12 +24,12 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.lato().fontFamily,
         // primaryTextTheme: GoogleFonts.latoTextTheme()
       ),
-      initialRoute: "/Home",
+      initialRoute: "/",
       routes: {
         "/": (context) => LoginPage(),
-        "/home": (context) => Homepage(),
-        "/login": (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => Homepage(),
+        MyRoutes.LoginRoute: (context) => LoginPage(),
       },
     );
-  }
+  } 
 }
