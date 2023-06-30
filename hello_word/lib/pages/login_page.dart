@@ -5,11 +5,23 @@ import 'package:flutter/material.dart ';
 import 'package:flutter/rendering.dart';
 import 'package:hello_word/utils/Routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+  
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String name = "";
   @override
   Widget build(BuildContext context) {
     return Material(
-        child: Column(
+        child:
+           SingleChildScrollView(
+         child:
+                   Column(
       children: [
         Image.asset(
           "assets/images/mobile-login.png",
@@ -20,7 +32,7 @@ class LoginPage extends StatelessWidget {
           //child: Text(Kiran),
         ),
         Text(
-          "Welcome",
+          "Welcome  $name",
           style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
         ),
         SizedBox(
@@ -36,6 +48,12 @@ class LoginPage extends StatelessWidget {
                     hintText: "Enter User Name",
                     labelText: "User Name",
                   ),
+                  onChanged: (value){
+                    name = value;
+                    setState(() {
+                      
+                    });
+                  } ,
                 ),
                 TextFormField(
                   obscureText: true,
@@ -59,6 +77,7 @@ class LoginPage extends StatelessWidget {
               ],
             )),
       ],
+    ) 
     ));
   }
 }
