@@ -14,18 +14,25 @@ class _LoginPageState extends State<LoginPage> {
   String name = "";
   bool changeButton = false;
 
+  final _fromKey=GlobalKey<Fromstate>();
+
+  
+  
+
   @override
   Widget build(BuildContext context) {
     return Material(
         color: Colors.white,
         child: SingleChildScrollView(
+          child: From(
+            key:_fromKey
           child: Column(
             children: [
               Image.asset(
                 "assets/images/Mobile-login.png",
                 fit: BoxFit.cover,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               Text(
@@ -35,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20.0,
               ),
               Padding(
@@ -76,7 +83,10 @@ class _LoginPageState extends State<LoginPage> {
                           changeButton = true;
                         });
                         await Future.delayed(Duration(seconds: 1));
-                        Navigator.pushNamed(context, MyRoutes.homeRoute);
+                        await Navigator.pushNamed(context, MyRoutes.homeRoute);
+                         setState(() {
+                          changeButton = true;
+                        });
                       },
                           child: AnimatedContainer(
                             duration: Duration(seconds: 1),
@@ -102,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 )
               ],
-            ),
+            ),)
           ),
         );
   }
