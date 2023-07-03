@@ -53,6 +53,7 @@ class _LoginPageState extends State<LoginPage> {
                         setState(() {});
                       },
                     ),
+                   
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
@@ -60,15 +61,23 @@ class _LoginPageState extends State<LoginPage> {
                         labelText: "Password",
                       ),
                     ),
+                   
                     const SizedBox(
                       height: 40.0,
                     ),
+                      
                       Material(
                         color: Colors.deepPurple,
                         borderRadius:
                             BorderRadius.circular(changeButton ? 50 : 8),
                         child: InkWell(
-                          onTap: () => moveToHome(context),
+                          onTap: () async {
+                        setState(() {
+                          changeButton = true;
+                        });
+                        await Future.delayed(Duration(seconds: 1));
+                        Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      },
                           child: AnimatedContainer(
                             duration: Duration(seconds: 1),
                             width: changeButton ? 50 : 150,
