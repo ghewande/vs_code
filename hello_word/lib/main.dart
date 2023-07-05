@@ -3,7 +3,7 @@ import 'package:hello_word/pages/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hello_word/utils/Routes.dart';
 import 'pages/home.dart';
-import 'pages/home.dart';
+
 
 void main() {
   runApp(MyApp());
